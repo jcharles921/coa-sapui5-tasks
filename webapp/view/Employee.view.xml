@@ -1,0 +1,102 @@
+<mvc:View
+    controllerName="coasapui5task1jc.controller.Employee"
+    xmlns:mvc="sap.ui.core.mvc"
+    xmlns:core="sap.ui.core"
+    xmlns="sap.m"
+    xmlns:f="sap.ui.layout.form"
+>
+    <Page
+        id="employeeDetailPage"
+        title="{i18n>employeeDetailPageTitle}"
+        showNavButton="true"
+        navButtonPress=".onNavBack"
+    >
+        <content>
+            <Panel
+                id="employeeDetailPanel"
+                headerText="{i18n>employeeDetailPanelHeader}"
+                class="sapUiResponsiveMargin"
+                expandable="true"
+                expanded="true"
+            >
+                <VBox
+                    id="employeeDetailVBox"
+                    class="sapUiSmallMargin"
+                >
+                    <ObjectHeader
+                        id="employeeDetailHeader"
+                        title="{EmployeeV2Model>name}"
+                        number="{
+                            path: 'EmployeeV2Model>salary',
+                            formatter: '.formatter.formatCurrency'
+                        }"
+                        intro="{EmployeeV2Model>role}"
+                    />
+                </VBox>
+
+                <f:Form
+                    id="employeeDetailForm"
+                    editable="false"
+                    layout="ResponsiveGridLayout"
+                >
+                    <f:formContainers>
+                        <f:FormContainer id="employeeFormContainer">
+                            <f:formElements>
+                                <f:FormElement
+                                    id="formElementEmpId"
+                                    label="{i18n>employeeIdLabel}"
+                                >
+                                    <f:fields>
+                                        <Text
+                                            id="empIdText"
+                                            text="{EmployeeV2Model>id}"
+                                        />
+                                    </f:fields>
+                                </f:FormElement>
+
+                                <f:FormElement
+                                    id="formElementEmpName"
+                                    label="{i18n>employeeNameLabel}"
+                                >
+                                    <f:fields>
+                                        <Text
+                                            id="empNameText"
+                                            text="{EmployeeV2Model>name}"
+                                        />
+                                    </f:fields>
+                                </f:FormElement>
+
+                                <f:FormElement
+                                    id="formElementEmpRole"
+                                    label="{i18n>employeeRoleLabel}"
+                                >
+                                    <f:fields>
+                                        <Text
+                                            id="empRoleText"
+                                            text="{EmployeeV2Model>role}"
+                                        />
+                                    </f:fields>
+                                </f:FormElement>
+
+                                <f:FormElement
+                                    id="formElementEmpSalary"
+                                    label="{i18n>employeeSalaryLabel}"
+                                >
+                                    <f:fields>
+                                        <ObjectNumber
+                                            id="empSalaryText"
+                                            number="{
+                                                path: 'EmployeeV2Model>salary',
+                                                formatter: '.formatter.formatCurrency'
+                                            }"
+                                        />
+                                    </f:fields>
+                                </f:FormElement>
+                            </f:formElements>
+                        </f:FormContainer>
+                    </f:formContainers>
+                </f:Form>
+            </Panel>
+        </content>
+    </Page>
+</mvc:View>

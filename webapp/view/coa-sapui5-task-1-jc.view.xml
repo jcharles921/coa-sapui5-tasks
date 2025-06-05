@@ -1,6 +1,0 @@
-<mvc:View controllerName="coasapui5task1jc.controller.coa-sapui5-task-1-jc"
-    xmlns:mvc="sap.ui.core.mvc"
-    xmlns="sap.m">
-    <Page id="page" title="{i18n>title}">
-    </Page>
-</mvc:View>

@@ -1,0 +1,130 @@
+{
+  "employeeData": [
+    {
+      "id": 5,
+      "name": "Edward Scissorhands",
+      "role": "Frontend Developer",
+      "salary": 78000
+    },
+    {
+      "id": 6,
+      "name": "Fiona Shrek",
+      "role": "Chief Happiness Officer",
+      "salary": 92000
+    },
+    {
+      "id": 7,
+      "name": "Gandalf The Grey",
+      "role": "Senior Wisdom Consultant",
+      "salary": 120000
+    },
+    {
+      "id": 8,
+      "name": "Hermione Granger",
+      "role": "Head of Research & Magical Solutions",
+      "salary": 105000
+    },
+    {
+      "id": 9,
+      "name": "Indiana Jones",
+      "role": "Artifact Acquisition Specialist",
+      "salary": 88000
+    },
+    {
+      "id": 10,
+      "name": "Jack Sparrow",
+      "role": "Resource Negotiation Expert (Part-time)",
+      "salary": 45000
+    },
+    {
+      "id": 11,
+      "name": "Kermit The Frog",
+      "role": "Muppet Relations Coordinator",
+      "salary": 60000
+    },
+    {
+      "id": 12,
+      "name": "Luna Lovegood",
+      "role": "Creative Ideas Generator",
+      "salary": 72000
+    },
+    {
+      "id": 13,
+      "name": "Master Yoda",
+      "role": "Syntax Simplification Guru",
+      "salary": 150000
+    },
+    {
+      "id": 14,
+      "name": "Neo Anderson",
+      "role": "Reality Check Coordinator",
+      "salary": 99000
+    },
+    {
+      "id": 15,
+      "name": "Optimus Prime",
+      "role": "Logistics & Transformation Lead",
+      "salary": 130000
+    },
+    {
+      "id": 16,
+      "name": "Pennywise The Clown",
+      "role": "Child Engagement Officer (Seasonal)",
+      "salary": 30000
+    },
+    {
+      "id": 17,
+      "name": "Quentin Quibble",
+      "role": "Chief Question Asker",
+      "salary": 68000
+    },
+    {
+      "id": 18,
+      "name": "Rocky Balboa",
+      "role": "Motivational Speaker (Internal)",
+      "salary": 70000
+    },
+    {
+      "id": 19,
+      "name": "Sherlock Holmes",
+      "role": "Lead Debugger & Mystery Solver",
+      "salary": 115000
+    },
+    {
+      "id": 20,
+      "name": "Tony Stark",
+      "role": "Innovation & Gadgetry Department Head",
+      "salary": 250000
+    },
+    {
+      "id": 21,
+      "name": "Ursula Sea-Witch",
+      "role": "Contract Negotiation Specialist",
+      "salary": 85000
+    },
+    {
+      "id": 22,
+      "name": "Voldemort 'Tom' Riddle",
+      "role": "Dark Arts & Crafts Supervisor",
+      "salary": 66600
+    },
+    {
+      "id": 23,
+      "name": "Willy Wonka",
+      "role": "Head of Confectionery Innovations",
+      "salary": 140000
+    },
+    {
+      "id": 24,
+      "name": "Xena WarriorPrincess",
+      "role": "Conflict Resolution Manager",
+      "salary": 98000
+    },
+    {
+      "id": 25,
+      "name": "Zaphod Beeblebrox",
+      "role": "Galactic Marketing & Self-Promotion",
+      "salary": 77000
+    }
+  ]
+}

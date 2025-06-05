@@ -38,7 +38,9 @@
       "minUI5Version": "1.136.1",
       "libs": {
         "sap.m": {},
-        "sap.ui.core": {}
+        "sap.ui.core": {},
+        "sap.ui.table": {},
+        "sap.f": {}
       }
     },
     "contentDensities": {
@@ -51,6 +53,11 @@
         "settings": {
           "bundleName": "coasapui5task1jc.i18n.i18n"
         }
+      },
+      "EmployeeV2Model": {
+        "type": "sap.ui.model.json.JSONModel",
+        "uri": "model/employeeData.json"
+     
       }
     },
     "resources": {
@@ -74,17 +81,23 @@
       },
       "routes": [
         {
-          "name": "Routecoa-sapui5-task-1-jc",
-          "pattern": ":?query:",
-          "target": [
-            "Targetcoa-sapui5-task-1-jc"
-          ]
+          "name": "home",
+          "pattern": "",
+          "target": ["home"]
+        },
+        {
+          "name": "employee",
+          "pattern": "employee/{employeeId}",
+          "target": ["employee"]
         }
       ],
       "targets": {
-        "Targetcoa-sapui5-task-1-jc": {
-          "id": "coa-sapui5-task-1-jc",
-          "name": "coa-sapui5-task-1-jc"
+        "home": { "viewId": "home", "viewName": "Home", "viewLevel": 1 },
+        "employee": {
+          "viewId": "employee",
+          "viewName": "Employee",
+          "viewLevel": 2,
+          "transition": "flip"
         }
       }
     },

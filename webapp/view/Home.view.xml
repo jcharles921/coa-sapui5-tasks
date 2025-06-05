@@ -1,0 +1,116 @@
+<mvc:View
+    controllerName="coasapui5task1jc.controller.Home"
+    xmlns:mvc="sap.ui.core.mvc"
+    xmlns:core="sap.ui.core"
+    xmlns="sap.m"
+>
+    <Page
+        id="employeePage"
+        title="{i18n>employeePageTitle}"
+    >
+        <content>
+            <Table
+                id="employeeTable"
+                items="{ path: 'EmployeeV2Model>/employeeData' }"
+                growing="true"
+                growingThreshold="10"
+                class="sapUiResponsiveMargin"
+                width="auto"
+                mode="None"
+                selectionChange=".onEmployeeSelect"
+                alternateRowColors="true"
+                modeAnimationOn="true"
+                busyIndicatorDelay="0"
+                busy="{EmployeeV2Model>/tableLoading}"
+            >
+                <headerToolbar>
+                    <Toolbar id="employeeTableToolbar">
+                        <Title
+                            id="employeeTableTitle"
+                            text="{i18n>employeeTableTitle}"
+                        />
+                        <ToolbarSpacer id="employeeTableSpacer" />
+                        <SearchField
+                            id="employeeSearchField"
+                            width="40%"
+                            search=".onFilterEmployees"
+                        />
+                    </Toolbar>
+                </headerToolbar>
+
+                <columns>
+                    <Column id="colEmployeeId">
+                        <header>
+                            <Text
+                                id="txtEmployeeIdHeader"
+                                text="{i18n>employeeIdLabel}"
+                            />
+                        </header>
+                    </Column>
+                    <Column id="colEmployeeName">
+                        <header>
+                            <Text
+                                id="txtEmployeeNameHeader"
+                                text="{i18n>employeeNameLabel}"
+                            />
+                        </header>
+                    </Column>
+                    <Column
+                        id="colEmployeeRole"
+                        minScreenWidth="Tablet"
+                        demandPopin="true"
+                    >
+                        <header>
+                            <Text
+                                id="txtEmployeeRoleHeader"
+                                text="{i18n>employeeRoleLabel}"
+                            />
+                        </header>
+                    </Column>
+                    <Column
+                        id="colEmployeeSalary"
+                        minScreenWidth="Tablet"
+                        demandPopin="true"
+                    >
+                        <header>
+                            <Text
+                                id="txtEmployeeSalaryHeader"
+                                text="{i18n>employeeSalaryLabel}"
+                            />
+                        </header>
+                    </Column>
+                </columns>
+
+                <items>
+                    <ColumnListItem
+                        id="employeeListItem"
+                        type="Navigation"
+                        press=".onEmployeePress"
+                    >
+                        <cells>
+                            <Text
+                                id="txtEmployeeId"
+                                text="{EmployeeV2Model>id}"
+                            />
+                            <ObjectIdentifier
+                                id="objEmployeeName"
+                                title="{EmployeeV2Model>name}"
+                            />
+                            <Text
+                                id="txtEmployeeRole"
+                                text="{EmployeeV2Model>role}"
+                            />
+                            <ObjectNumber
+                                id="objEmployeeSalary"
+                                number="{
+                                    path: 'EmployeeV2Model>salary',
+                                    formatter: '.formatter.formatCurrency'
+                                }"
+                            />
+                        </cells>
+                    </ColumnListItem>
+                </items>
+            </Table>
+        </content>
+    </Page>
+</mvc:View>
