@@ -1,6 +1,5 @@
 sap.ui.define([
-    "sap/ui/core/UIComponent",
-    "coasapui5task1jc/model/models"
+    "sap/ui/core/UIComponent"
 ], (UIComponent, models) => {
     "use strict";
 
@@ -13,13 +12,7 @@ sap.ui.define([
         },
 
         init() {
-            // call the base component's init function
             UIComponent.prototype.init.apply(this, arguments);
-
-            // set the device model
-            this.setModel(models.createDeviceModel(), "device");
-
-            // enable routing
             this.getRouter().initialize();
         }
     });
