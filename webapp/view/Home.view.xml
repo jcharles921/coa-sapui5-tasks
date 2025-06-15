@@ -8,6 +8,7 @@
         id="employeePage"
         title="{i18n>employeePageTitle}"
     >
+    
         <content>
             <Table
                 id="employeeTable"
@@ -16,8 +17,8 @@
                 growingThreshold="10"
                 class="sapUiResponsiveMargin"
                 width="auto"
-                mode="None"
-                selectionChange=".onEmployeeSelect"
+                mode="Delete"
+                  delete=".onDelete"
                 alternateRowColors="true"
                 modeAnimationOn="true"
                 busyIndicatorDelay="0"
@@ -29,12 +30,19 @@
                             id="employeeTableTitle"
                             text="{i18n>employeeTableTitle}"
                         />
-                        <ToolbarSpacer id="employeeTableSpacer" />
+                        <ToolbarSpacer id="employeeTableSpacerB" />
                         <SearchField
                             id="employeeSearchField"
                             width="40%"
                             search=".onFilterEmployees"
                         />
+                        <ToolbarSpacer id="employeeTableSpacer" />
+                        <Button id="openDialogueButton"
+                        icon="sap-icon://add-employee"
+                        press=".openDialog"
+                        type="Success"
+                        text="New"
+                        ></Button>
                     </Toolbar>
                 </headerToolbar>
 

@@ -15,6 +15,7 @@
       "version": "1.17.6",
       "toolsId": "0614e47f-2881-4c7c-a341-f701c12f1e21"
     }
+    
   },
   "sap.ui": {
     "technology": "UI5",
@@ -57,7 +58,6 @@
       "EmployeeV2Model": {
         "type": "sap.ui.model.json.JSONModel",
         "uri": "model/employeeData.json"
-     
       }
     },
     "resources": {
@@ -72,12 +72,11 @@
         "routerClass": "sap.m.routing.Router",
         "controlAggregation": "pages",
         "controlId": "app",
-        "transition": "slide",
+        "transition": "flip",
         "type": "View",
         "viewType": "XML",
         "path": "coasapui5task1jc.view",
-        "async": true,
-        "viewPath": "coasapui5task1jc.view"
+        "async": true
       },
       "routes": [
         {
@@ -98,6 +97,7 @@
           "viewName": "Employee",
           "viewLevel": 2,
           "transition": "flip"
+          
         }
       }
     },
