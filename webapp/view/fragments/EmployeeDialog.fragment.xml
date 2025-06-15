@@ -1,0 +1,114 @@
+<core:FragmentDefinition
+    xmlns="sap.m"
+    xmlns:core="sap.ui.core"
+    xmlns:l="sap.ui.layout"
+    xmlns:f="sap.ui.layout.form"
+>
+    <Dialog
+        id="employeeDialog"
+        title="{dialogModel>/title}"
+        contentWidth="500px"
+        contentHeight="400px"
+        resizable="true"
+        draggable="true"
+        class="sapUiResponsivePadding--content sapUiResponsivePadding--header sapUiResponsivePadding--footer"
+    >
+        <content>
+            <f:SimpleForm
+                id="employeeForm"
+                editable="true"
+                layout="ResponsiveGridLayout"
+                labelSpanXL="4"
+                labelSpanL="4"
+                labelSpanM="4"
+                labelSpanS="12"
+                adjustLabelSpan="false"
+                emptySpanXL="0"
+                emptySpanL="0"
+                emptySpanM="0"
+                emptySpanS="0"
+                columnsXL="1"
+                columnsL="1"
+                columnsM="1"
+                singleContainerFullSize="false"
+            >
+                <f:content>
+                    <Label
+                        id="employeeId"
+                        text="{i18n>employeeIdLabel}"
+                        visible="{dialogModel>/showId}"
+                    />
+                    <Input
+                        id="employeeIdInput"
+                        value="{dialogModel>/employee/id}"
+                        enabled="false"
+                        visible="{dialogModel>/showId}"
+                    />
+
+                    <!-- Employee Name Field -->
+                    <Label
+                        id="employeeName"
+                        text="{i18n>employeeNameLabel}"
+                        required="true"
+                    />
+                    <Input
+                        id="employeeNameInput"
+                        value="{dialogModel>/employee/name}"
+                        placeholder="Enter employee name"
+                        required="true"
+                        maxLength="100"
+                        valueState="{dialogModel>/validation/nameState}"
+                        valueStateText="{dialogModel>/validation/nameStateText}"
+                    />
+
+                    <Label
+                        id="employeeRole"
+                        text="{i18n>employeeRoleLabel}"
+                        required="true"
+                    />
+                    <Input
+                        id="employeeRoleInput"
+                        value="{dialogModel>/employee/role}"
+                        placeholder="Enter employee role"
+                        required="true"
+                        maxLength="50"
+                        valueState="{dialogModel>/validation/roleState}"
+                        valueStateText="{dialogModel>/validation/roleStateText}"
+                    />
+
+                    <Label
+                        id="employeeSalary"
+                        text="{i18n>employeeSalaryLabel}"
+                        required="true"
+                    />
+                    <Input
+                        id="employeeSalaryInput"
+                        value="{dialogModel>/employee/salary}"
+                        placeholder="Enter salary amount"
+                        type="Number"
+                        required="true"
+                        valueState="{dialogModel>/validation/salaryState}"
+                        valueStateText="{dialogModel>/validation/salaryStateText}"
+                    />
+                </f:content>
+            </f:SimpleForm>
+        </content>
+
+        <beginButton>
+            <Button
+                id="saveButton"
+                text="{dialogModel>/saveButtonText}"
+                type="Emphasized"
+                press="onSaveEmployee"
+            />
+        </beginButton>
+
+        <endButton>
+            <Button
+                id="cancelButton"
+                text="Cancel"
+                press="onCancelDialog"
+            />
+        </endButton>
+    </Dialog>
+</core:FragmentDefinition>

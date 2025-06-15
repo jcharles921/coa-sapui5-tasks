@@ -1,102 +1,112 @@
 <mvc:View
     controllerName="coasapui5task1jc.controller.Employee"
     xmlns:mvc="sap.ui.core.mvc"
-    xmlns:core="sap.ui.core"
     xmlns="sap.m"
     xmlns:f="sap.ui.layout.form"
+    xmlns:core="sap.ui.core"
 >
     <Page
-        id="employeeDetailPage"
-        title="{i18n>employeeDetailPageTitle}"
+        id="employeeDetails"
+        title="Employee Details"
         showNavButton="true"
-        navButtonPress=".onNavBack"
+        navButtonPress="onNavBack"
+        class="sapUiResponsivePadding--header sapUiResponsivePadding--content sapUiResponsivePadding--footer"
     >
         <content>
             <Panel
-                id="employeeDetailPanel"
-                headerText="{i18n>employeeDetailPanelHeader}"
+                id="employeePanel"
+                headerText="Employee Information"
                 class="sapUiResponsiveMargin"
-                expandable="true"
-                expanded="true"
+                width="auto"
+                expandable="false"
             >
-                <VBox
-                    id="employeeDetailVBox"
-                    class="sapUiSmallMargin"
-                >
-                    <ObjectHeader
-                        id="employeeDetailHeader"
-                        title="{EmployeeV2Model>name}"
-                        number="{
-                            path: 'EmployeeV2Model>salary',
-                            formatter: '.formatter.formatCurrency'
-                        }"
-                        intro="{EmployeeV2Model>role}"
-                    />
-                </VBox>
+                <content>
+                    <f:SimpleForm
+                        id="employeeDetailsForm"
+                        editable="false"
+                        layout="ResponsiveGridLayout"
+                        labelSpanXL="3"
+                        labelSpanL="3"
+                        labelSpanM="3"
+                        labelSpanS="12"
+                        adjustLabelSpan="false"
+                        emptySpanXL="4"
+                        emptySpanL="4"
+                        emptySpanM="4"
+                        emptySpanS="0"
+                        columnsXL="1"
+                        columnsL="1"
+                        columnsM="1"
+                        singleContainerFullSize="false"
+                    >
+                        <f:content>
+                            <!-- Employee ID -->
+                            <Label
+                                id="idLabel"
+                                text="{i18n>employeeIdLabel}"
+                                design="Bold"
+                            />
+                            <Text
+                                id="idText"
+                                text="{EmployeeV2Model>id}"
+                            />
 
-                <f:Form
-                    id="employeeDetailForm"
-                    editable="false"
-                    layout="ResponsiveGridLayout"
-                >
-                    <f:formContainers>
-                        <f:FormContainer id="employeeFormContainer">
-                            <f:formElements>
-                                <f:FormElement
-                                    id="formElementEmpId"
-                                    label="{i18n>employeeIdLabel}"
-                                >
-                                    <f:fields>
-                                        <Text
-                                            id="empIdText"
-                                            text="{EmployeeV2Model>id}"
-                                        />
-                                    </f:fields>
-                                </f:FormElement>
+                            <!-- Employee Name -->
+                            <Label
+                                id="nameLabel"
+                                text="{i18n>employeeNameLabel}"
+                                design="Bold"
+                            />
+                            <Text
+                                id="nameText"
+                                text="{EmployeeV2Model>name}"
+                            />
 
-                                <f:FormElement
-                                    id="formElementEmpName"
-                                    label="{i18n>employeeNameLabel}"
-                                >
-                                    <f:fields>
-                                        <Text
-                                            id="empNameText"
-                                            text="{EmployeeV2Model>name}"
-                                        />
-                                    </f:fields>
-                                </f:FormElement>
+                            <!-- Employee Role -->
+                            <Label
+                                id="roleLabel"
+                                text="{i18n>employeeRoleLabel}"
+                                design="Bold"
+                            />
+                            <Text
+                                id="roleText"
+                                text="{EmployeeV2Model>role}"
+                            />
 
-                                <f:FormElement
-                                    id="formElementEmpRole"
-                                    label="{i18n>employeeRoleLabel}"
-                                >
-                                    <f:fields>
-                                        <Text
-                                            id="empRoleText"
-                                            text="{EmployeeV2Model>role}"
-                                        />
-                                    </f:fields>
-                                </f:FormElement>
-
-                                <f:FormElement
-                                    id="formElementEmpSalary"
-                                    label="{i18n>employeeSalaryLabel}"
-                                >
-                                    <f:fields>
-                                        <ObjectNumber
-                                            id="empSalaryText"
-                                            number="{
-                                                path: 'EmployeeV2Model>salary',
-                                                formatter: '.formatter.formatCurrency'
-                                            }"
-                                        />
-                                    </f:fields>
-                                </f:FormElement>
-                            </f:formElements>
-                        </f:FormContainer>
-                    </f:formContainers>
-                </f:Form>
+                            <!-- Employee Salary -->
+                            <Label
+                                id="salaryLabel"
+                                text="{i18n>employeeSalaryLabel}"
+                                design="Bold"
+                            />
+                            <Text
+                                id="salaryText"
+                                text="{
+                                    path: 'EmployeeV2Model>salary',
+                                    formatter: '.formatter.formatCurrency'
+                                }"
+                            />
+                        </f:content>
+                    </f:SimpleForm>
+                </content>
             </Panel>
         </content>
+
+        <footer>
+            <Toolbar
+            id="toolBar"
+            >
+                <ToolbarSpacer 
+                id="tollbarSpacer"
+                />
+                <Button
+                    id="editButton"
+                    text="Edit Employee"
+                    type="Emphasized"
+                    icon="sap-icon://edit"
+                    press="onEditEmployee"
+                />
+            </Toolbar>
+        </footer>
     </Page>
 </mvc:View>
